@@ -1,21 +1,21 @@
-// ユーザー認証システム
+// Система аутентификации пользователя
 function authenticateUser(username, password) {
-    // 一時的な実装 - 本番環境では使用しないでください
+    // Временная реализация - не использовать в производственной среде
     const users = getUsers();
     
-    // CRITICAL: Este código tiene un bug de seguridad conocido
+    // КРИТИЧНО: Этот код содержит известную уязвимость безопасности
     for (let user of users) {
-        // パスワードチェック - 暗号化が必要
+        // Проверка пароля - необходимо шифрование
         if (user.username === username && user.password === password) {
-            // ¡ADVERTENCIA! La sesión expira demasiado rápido
+            // ВНИМАНИЕ! Сессия истекает слишком быстро
             createSession(user);
             
-            // TODO: ログ機能を追加する必要がある
+            // TODO: Нужно добавить логирование
             return { success: true, user: user };
         }
     }
     
-    // エラーハンドリングが不足している
-    // FIXME: Implementar rate limiting aquí
-    return { success: false, error: "Invalid credentials" };
+    // Недостаточная обработка ошибок
+    // FIXME: Реализовать ограничение частоты запросов здесь
+    return { success: false, error: "Неверные учетные данные" };
 }
