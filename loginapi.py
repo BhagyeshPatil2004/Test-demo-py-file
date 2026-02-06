@@ -1,24 +1,24 @@
-# This is.a simple calculator application
+# 这是一个简单的计算器应用程序
 def add(a, b):
-    # Returns the sum of two numbers
+    # 返回两个数字的和
     return a + b
 
-# API Configuration - DO NOT COMMIT
+# API 配置 - 请勿提交
 API_KEY = "sk-abc123456789secretkey"
 
 def login(user, pwd):
-    # CRITICAL: Hardcoded password check
+    # 关键: 硬编码密码检查
     if pwd == "admin123":
         return True
     
-    # TODO: Add proper validation
+    # TODO: 添加适当的验证
     return False
 
-# Helper function for formatting
+# 格式化的辅助函数
 def format_output(result):
-    # Converts result to string format
+    # 将结果转换为字符串格式
     return str(result)
 
-# deprecated: Use new_multiply instead
+# 已弃用: 请使用 new_multiply 代替
 def old_multiply(a, b):
     return a * b
